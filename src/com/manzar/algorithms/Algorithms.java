@@ -9,6 +9,10 @@ public class Algorithms {
 
     public static final Comparator<Person> PERSON_COMPARATOR_BY_WEIGHT = Comparator.comparing(Person::getWeight);
 
+    private Algorithms() {
+
+    }
+
     /**
      * This is an implementation of merge sort algorithm. Time complexity - O(n * log n)
      */
@@ -31,7 +35,10 @@ public class Algorithms {
     }
 
     private static void merge(Person[] people, Person[] leftPart, Person[] rightPart, Comparator<Person> personComparator) {
-        int i = 0, j = 0, k = 0;
+
+        int i = 0;
+        int j = 0;
+        int k = 0;
 
         while (i < leftPart.length && j < rightPart.length) {
             if (personComparator.compare(leftPart[i], rightPart[j]) <= 0) {
