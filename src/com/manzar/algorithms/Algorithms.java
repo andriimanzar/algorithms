@@ -7,7 +7,7 @@ import java.util.Comparator;
 
 public class Algorithms {
 
-    public static final Comparator<Person> PERSON_WEIGHT_COMPARATOR = Comparator.comparing(Person::getWeight);
+    public static final Comparator<Person> PERSON_COMPARATOR_BY_WEIGHT = Comparator.comparing(Person::getWeight);
 
     /**
      * This is an implementation of merge sort algorithm. Time complexity - O(n * log n)
@@ -54,7 +54,7 @@ public class Algorithms {
 
     public static long findUniquePersonsHeightWithSameWeight(Person[] people) {
         long count = 0;
-        Arrays.sort(people, PERSON_WEIGHT_COMPARATOR);
+        Arrays.sort(people, PERSON_COMPARATOR_BY_WEIGHT);
         for (int i = 0; i < people.length; i++) {
             while (sameWeightAndSameHeightCondition(people, i)) {
                 i++;
